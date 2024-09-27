@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scryfall Data Exporter</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        button {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Scryfall Data Exporter</h1>
+
+    <!-- Input Fields for Query Parameters -->
+    <div>
+        <label for="name">Name (comma-separated):</label>
+        <input type="text" id="name" placeholder="e.g. goblin, dragon"><br><br>
+
+        <label for="type">Type (comma-separated):</label>
+        <input type="text" id="type" placeholder="e.g. creature, artifact"><br><br>
+
+        <label for="manaCostRange">Mana Cost Range (comma-separated):</label>
+        <input type="text" id="manaCostRange" placeholder="e.g. 1,2,3"><br><br>
+
+        <label for="convertedManaCost">Converted Mana Cost:</label>
+        <input type="number" id="convertedManaCost" placeholder="e.g. 4"><br><br>
+
+        <label for="description">Description (comma-separated):</label>
+        <input type="text" id="description" placeholder="e.g. flying, trample"><br><br>
+    </div>
+
+    <button id="fetchData">Fetch Data & Display Table</button>
+
+    <table id="cardTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Mana Cost</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data will be populated here -->
+        </tbody>
+    </table>
+
+    <button id="downloadExcel" disabled>Download Excel</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
